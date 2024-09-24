@@ -1,50 +1,51 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Picture } from "astro:assets";
+import Icon from "@/components/Icon.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE_TITLE, AIRSTREAM_NAME } from "@/consts";
+
+import aiMan from "@/public/ai-man.jpg";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+  <div class="stack min-h-screen bg-zinc-950 text-zinc-100">
+    <Header />
+
+    <main
+      class="stack container mx-auto my-6 h-min items-center px-4 md:flex-row md:justify-around lg:gap-8"
+    >
+      <div
+        class="stack mb-8 items-center text-center md:mb-0 md:w-1/2 md:items-start md:text-left"
+      >
+        <h1 class="mb-4 text-4xl lg:text-6xl">Hello, I am {SITE_TITLE}</h1>
+        <p class="mb-4 text-xl font-semibold lg:text-2xl">
+          Transmitting from <a href="/mind" class="gradient-text"
+            >{AIRSTREAM_NAME} ...</a
+          >
+        </p>
+        <p class="mb-4 text-xl lg:text-2xl">
+          Combining the <span class="gradient-text"
+            >miracle of human ingenuity</span
+          >
+          with the <span class="gradient-text">power of AI</span> to create the
+          <span class="gradient-text">hybrid developer</span> of the future ...
+        </p>
+        <div class="flex items-center gap-2 text-xl">
+          <Icon icon="terminalWindow" size="1.5em" gradient />
+          <a href="/code" class="gradient-text"> Explore ...</a>
+        </div>
+      </div>
+      <div class="md:w-1/3">
+        <Picture
+          src={aiMan}
+          alt="AI and Human Collaboration"
+          class="m-auto w-4/5 rounded-full md:ml-auto md:mr-0 md:w-full"
+        />
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
