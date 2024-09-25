@@ -15,6 +15,10 @@ export default {
         xl: "1280px",
         "2xl": "1536px",
       },
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

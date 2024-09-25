@@ -1,9 +1,10 @@
 ---
+import { SITE_TITLE } from "@/consts";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
   class="gradient-text mt-auto border-t border-zinc-700 p-8 text-center font-semibold"
 >
-  <p>&copy; {currentYear} AI/Man. All rights reserved.</p>
+  <p>&copy; {currentYear} {SITE_TITLE}. All rights reserved.</p>
 </footer>
