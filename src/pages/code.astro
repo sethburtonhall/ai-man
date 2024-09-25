@@ -62,9 +62,8 @@ const posts = (await getCollection("code")).sort(
                   >
                     {post.data.title} <CursorPulse />
                   </h4>
-                  <p class="m-0 text-zinc-400">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
+
+                  <FormattedDate date={post.data.pubDate} />
                 </a>
               </li>
             ))

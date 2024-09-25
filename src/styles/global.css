@@ -28,6 +28,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
     --radius: 0.5rem;
 
     --link: 291 94% 65%;
@@ -50,6 +51,9 @@
       var(--gradient-stop-2),
       var(--gradient-stop-3)
     );
+
+    --font-brand: "Orbitron", sans-serif;
+    --font-body: "Roboto", sans-serif;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -111,7 +115,7 @@
   }
 
   a {
-    @apply text-link;
+    @apply gradient-text;
   }
   a:hover:not(.site-title) {
     @apply text-link-hover;

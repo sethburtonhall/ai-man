@@ -1,0 +1,58 @@
+---
+title: "TipTop"
+description: "Split your bill with friends!"
+pubDate: "September 25 2024"
+heroImage: "/assets/code/tip-top.jpg"
+promptImage: "/assets/code/tip-top-prompt.jpg"
+url: "https://tip-top-app.netlify.app/"
+github: "https://github.com/sethburtonhall/tip-top"
+---
+
+import { Picture } from "astro:assets";
+
+#### Links
+
+- <a href={frontmatter.url}>App</a>{" "}
+- <a href={frontmatter.github}>Code</a>
+
+#### AI Tools
+
+- [V0 by Vercel](https://v0.dev/)
+- [shadcn CLI](https://ui.shadcn.com/docs/cli)
+- [Claude](https://claude.ai/)
+
+#### Prompts
+
+> Build out this tip calculator app and get it looking as close to the design as possible. It should use shadcn components and have a green theme. See attached screenshot for the design. Users should be able to Calculate the correct tip and total cost of the bill per person, View the optimal layout for the app depending on their device's screen size, and See hover states for all interactive elements on the page. Please use the following design as a reference.
+
+<div class="stack items-end gap-0">
+  <Picture
+    width={768}
+    height={360}
+    src={frontmatter.promptImage}
+    alt="TipTop Prompt"
+    class="bg-red-400"
+  />
+
+  {<a
+    href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+    class="text-base"
+  >
+    *Design by Frontend Mentor
+  </a>}
+</div>
+
+#### Future Features
+- Add support for multiple currencies
+- Implement a dark mode option
+- Create a history feature to save previous calculations
+- Add the ability to split the bill unevenly among participants
+- Include a feature to scan receipts and automatically input bill details
+- Implement a tip suggestion feature based on service quality
+
+#### Tech Stack
+
+- Next.js
+- TypeScript
+- TailwindCSS
+- shadcn

@@ -40,14 +40,14 @@ const {
       </div>
       <article>
         <div
-          class="prose prose-p:text-xl prose-headings:text-zinc-100 prose-p:text-zinc-100 max-w[calc(100% - 2em)] mx-auto max-w-3xl p-2"
+          class="prose prose-a:gradient-text prose-img:rounded-xl prose-ul:text-zinc-100 prose-headings:text-zinc-100 prose-p:text-zinc-100 mx-auto p-2 text-xl"
         >
           <div class="mb-4 p-4 text-center">
-            <div class="mb-2">
-              <FormattedDate date={pubDate} />
+            <div class="font-semi mb-2 text-base text-zinc-400">
+              {!updatedDate && <FormattedDate date={pubDate} />}
               {
                 updatedDate && (
-                  <div class="italic">
+                  <div>
                     Last updated on <FormattedDate date={updatedDate} />
                   </div>
                 )
@@ -55,9 +55,12 @@ const {
             </div>
             {
               title && (
-                <h1 class="text-2xl text-zinc-100 lg:text-4xl">{title}</h1>
+                <h1 class="gradient-text mb-3 text-2xl !text-transparent lg:text-4xl">
+                  {title}
+                </h1>
               )
             }
+            {description && <p class="mt-0">{description}</p>}
             <hr class="my-2 border-zinc-700" />
           </div>
           <slot />
