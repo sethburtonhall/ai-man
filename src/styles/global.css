@@ -86,8 +86,6 @@
 
   html {
     font-family: "Orbitron", system-ui, sans-serif;
-    background-color: #18181b;
-    color: #f4f4f5;
   }
 
   body {
@@ -111,7 +109,7 @@
     @apply text-link;
   }
   a:hover:not(.site-title) {
-    @apply text-link-hover underline;
+    @apply text-link-hover;
   }
 }
 
@@ -124,12 +122,8 @@
     @apply bg-gradient-to-r from-blue-500 via-purple-500 to-fuchsia-500 bg-clip-text font-semibold text-transparent;
   }
 
-  .site-title {
-    @apply hover:no-underline;
-  }
-
   .active:not(.site-title) {
-    @apply text-fuchsia-500 underline;
+    @apply text-fuchsia-500 underline underline-offset-4;
   }
 
   .gradient-bg {

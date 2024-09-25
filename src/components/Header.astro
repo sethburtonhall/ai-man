@@ -18,15 +18,15 @@ const navItems: {
 ---
 
 <header
-  class="mb-auto flex items-center justify-between border-b border-zinc-700 bg-zinc-950 p-4 pr-6"
+  class="mb-auto flex items-center justify-between border-b border-zinc-700 p-4 pr-6"
 >
   <div class="flex items-center">
-    <HeaderLink href="/" class="site-title">
-      <Icon icon="aiMan" size="3em" gradient />
+    <HeaderLink href="/" class="site-title relative hover:animate-pulse">
+      <Icon icon="aiMan" size="2.5em" gradient />
       <span class="text-3xl font-semibold">{SITE_TITLE}</span>
     </HeaderLink>
   </div>
-  <nav class="hidden space-x-4 text-lg font-semibold md:flex">
+  <nav class="hidden space-x-7 text-lg font-semibold md:flex">
     {
       navItems.map((item) => (
         <HeaderLink href={item.href}>
@@ -39,16 +39,14 @@ const navItems: {
 
   <div class="md:hidden">
     <MobileMenu client:load>
-      <Icon icon="terminalWindow" size="3em" slot="icon" gradient />
+      <Icon icon="terminalWindow" size="2.5em" slot="icon" gradient />
       <HeaderLink
         href="/"
-        class="site-title flex items-center border-b border-zinc-700 pb-4"
+        class="site-title flex items-start border-b border-zinc-700 pb-4"
         slot="title"
       >
-        <Icon icon="aiMan" size="3em" gradient />
-        <span class="gradient-text ml-2 text-3xl font-semibold"
-          >{SITE_TITLE}</span
-        >
+        <Icon icon="aiMan" size="2.5em" gradient />
+        <span class="gradient-text text-3xl font-semibold">{SITE_TITLE}</span>
       </HeaderLink>
       <ul class="space-y-2 py-4" slot="navItems">
         {

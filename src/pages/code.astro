@@ -1,0 +1,77 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import { Picture } from "astro:assets";
+import Header from "@/components/Header.astro";
+import CursorPulse from "@/components/CursorPulse.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+const posts = (await getCollection("code")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="container mx-auto my-12 lg:my-20">
+      <section>
+        <ul
+          class="m-0 grid list-none grid-cols-1 gap-2 p-0 md:grid-cols-2 md:gap-8"
+        >
+          {
+            posts.map((post) => (
+              <li
+                class:list={[
+                  "decoration-none group col-span-1 mb-12 transition-all duration-200",
+                  {
+                    "first:col-span-1 first:text-center md:first:col-span-2 md:first:mb-16":
+                      post === posts[0],
+                  },
+                ]}
+              >
+                <a href={`/code/${post.slug}/`} class="w-min">
+                  <div class="w-full">
+                    <Picture
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage as string}
+                      alt=""
+                      class:list={[
+                        "mb-2 rounded-xl group-hover:shadow-lg",
+                        { "w-full": post === posts[0] },
+                      ]}
+                    />
+                  </div>
+                  <h4
+                    class:list={[
+                      "gradient-text group-hover:text-brand",
+                      {
+                        "w-max": post !== posts[0],
+                      },
+                      {
+                        "w-full text-2xl md:text-4xl": post === posts[0],
+                      },
+                    ]}
+                  >
+                    {post.data.title} <CursorPulse />
+                  </h4>
+                  <p class="m-0 text-zinc-400">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

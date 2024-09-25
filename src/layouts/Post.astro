@@ -18,23 +18,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <body>
     <Header />
-    <main class="my-20">
+    <main class="container mx-auto my-12 lg:my-20">
       <div>
         {
           heroImage && (
             <Picture
-              width={1020}
-              height={510}
+              width={720}
+              height={360}
               src={heroImage}
               alt=""
-              class="m-auto max-w-[960px] rounded-xl"
+              class="m-auto w-full rounded-xl"
             />
           )
         }
       </div>
       <article>
         <div
-          class="prose max-w[calc(100% - 2em)] mx-auto max-w-3xl p-2 text-zinc-900"
+          class="prose prose-p:text-zinc-100 max-w[calc(100% - 2em)] mx-auto max-w-3xl p-2"
         >
           <div class="mb-4 p-4 text-center">
             <div class="mb-2 text-zinc-500">

@@ -8,14 +8,12 @@ const { href, class: className, ...props } = Astro.props;
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + subpath?.[0];
-
-console.log(isActive, href, pathname, subpath);
 ---
 
 <a
   href={href}
   class:list={[
-    "gradient-text flex items-center gap-2 hover:font-semibold hover:underline",
+    "gradient-text flex items-end gap-2 hover:font-semibold",
     className,
     { active: isActive },
   ]}

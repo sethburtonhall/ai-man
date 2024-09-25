@@ -2,6 +2,7 @@
 import { Picture } from "astro:assets";
 import Icon from "@/components/Icon.astro";
 import Layout from "@/layouts/Layout.astro";
+import CursorPulse from "@/components/CursorPulse.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, AIRSTREAM_NAME } from "@/consts";
@@ -10,31 +11,37 @@ import aiMan from "@/public/ai-man.jpg";
 ---
 
 <Layout>
-  <div class="stack min-h-screen bg-zinc-950 text-zinc-100">
+  <div class="stack min-h-screen">
     <Header />
 
     <main
-      class="stack container mx-auto my-6 h-min items-center px-4 md:flex-row md:justify-around lg:gap-8"
+      class="stack md-px-0 container mx-auto my-6 h-min items-center px-4 md:my-0 md:flex-row md:justify-between lg:gap-8"
     >
       <div
         class="stack mb-8 items-center text-center md:mb-0 md:w-1/2 md:items-start md:text-left"
       >
-        <h1 class="mb-4 text-4xl lg:text-6xl">Hello, I am {SITE_TITLE}</h1>
+        <h1 class="mb-4 text-4xl lg:text-6xl">
+          Hello, I am {SITE_TITLE}
+        </h1>
         <p class="mb-4 text-xl font-semibold lg:text-2xl">
-          Transmitting from <a href="/mind" class="gradient-text"
-            >{AIRSTREAM_NAME} ...</a
-          >
+          Transmitting from <a href="/mind" class="gradient-text">
+            {AIRSTREAM_NAME}
+          </a>
         </p>
         <p class="mb-4 text-xl lg:text-2xl">
           Combining the <span class="gradient-text"
             >miracle of human ingenuity</span
           >
           with the <span class="gradient-text">power of AI</span> to create the
-          <span class="gradient-text">hybrid developer</span> of the future ...
+          <span class="gradient-text">hybrid developer</span> of the future
         </p>
+
         <div class="flex items-center gap-2 text-xl">
           <Icon icon="terminalWindow" size="1.5em" gradient />
-          <a href="/code" class="gradient-text"> Explore ...</a>
+          <a href="/code" class="gradient-text">
+            Explore MainFrame
+            <CursorPulse />
+          </a>
         </div>
       </div>
       <div class="md:w-1/3">
