@@ -53,7 +53,7 @@
     );
 
     --font-brand: "Orbitron", sans-serif;
-    --font-body: "Roboto", sans-serif;
+    --font-body: "Roboto Mono", sans-serif;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -89,7 +89,7 @@
   }
 
   body {
-    @apply font-roboto bg-zinc-950 text-lg text-zinc-100;
+    @apply bg-zinc-950 font-roboto text-lg text-zinc-100;
   }
 
   h1,

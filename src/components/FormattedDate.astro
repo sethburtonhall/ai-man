@@ -1,12 +1,13 @@
 ---
 interface Props {
   date: Date;
+  index?: number;
 }
 
-const { date } = Astro.props;
+const { date, index } = Astro.props;
 ---
 
-Chrono Log: Entry #
+ChronoLog: Entry #{index !== undefined ? index + 1 : ""}
 <time datetime={date?.toISOString()}>
   {
     date

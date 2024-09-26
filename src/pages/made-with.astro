@@ -16,7 +16,25 @@ const tools: {
     icon: "rocket",
   },
   {
-    title: "Tailwind CSS",
+    title: "shadcn/ui",
+    description:
+      "shadcn/ui is a collection of re-usable components built using Radix UI and Tailwind CSS, offering beautifully designed and accessible UI components.",
+    icon: "terminalWindow",
+  },
+  {
+    title: "React",
+    description:
+      "React is a JavaScript library for building user interfaces, allowing for efficient, declarative, and flexible front-end development.",
+    icon: "react",
+  },
+  {
+    title: "TypeScript",
+    description:
+      "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+    icon: "typescript",
+  },
+  {
+    title: "Tailwind",
     description:
       "Tailwind CSS is a utility-first CSS framework for rapidly building custom designs.",
     icon: "swatch",
@@ -32,12 +50,6 @@ const tools: {
     description:
       "Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.",
     icon: "lightening",
-  },
-  {
-    title: "TypeScript",
-    description:
-      "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
-    icon: "typescript",
   },
   {
     title: "GitHub",
@@ -60,17 +72,20 @@ const tools: {
   >
     <section>
       <div class="stack items-center gap-2">
-        <h1 class="gradient-text text-3xl tracking-tighter lg:text-5xl">
-          Made With <CursorPulse />
-        </h1>
-        <p class="text-lg text-zinc-100 lg:text-xl">
+        <div class="flex items-end gap-2">
+          <h1 class="gradient-text text-3xl tracking-tighter lg:text-5xl">
+            Made With
+          </h1>
+          <CursorPulse class="text-5xl" />
+        </div>
+        <p class="text-lg text-zinc-200 lg:text-xl">
           A list of tools and technologies used to build this site.
         </p>
       </div>
     </section>
 
     <section>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-3">
         {
           tools.map((tool) => (
             <div class="stack gap-2">
@@ -81,7 +96,7 @@ const tools: {
                 gradient
               />
               <h2 class="text-lg lg:text-2xl">{tool.title}</h2>
-              <p class="text-stone-500">{tool.description}</p>
+              <p class="text-zinc-200">{tool.description}</p>
             </div>
           ))
         }

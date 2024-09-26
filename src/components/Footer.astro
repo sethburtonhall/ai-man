@@ -4,12 +4,10 @@ import { SITE_TITLE } from "@/consts";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="mt-auto border-t border-zinc-700 p-8 text-center text-base font-semibold text-zinc-400"
->
-  <p>
-    &copy; {currentYear}
-    {SITE_TITLE}. All rights reserved. <a href="/made-with">Made with</a>
-    <CursorPulse />
+<footer class="mt-auto border-t border-zinc-700 p-8 text-base text-zinc-200">
+  <p class="stack items-center justify-center gap-2 md:flex-row">
+    <span>&copy; {currentYear} {SITE_TITLE}</span>
+    <span>All rights reserved.</span>
+    <a href="/made-with">Made with </a>
   </p>
 </footer>

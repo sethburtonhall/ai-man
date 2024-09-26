@@ -6,26 +6,29 @@ interface Props {
   post: CollectionEntry<"code">;
   prevPost: CollectionEntry<"code"> | null;
   nextPost: CollectionEntry<"code"> | null;
+  index: number;
 }
 
 export async function getStaticPaths() {
   const posts = await getCollection("code");
-  console.log("Posts:", posts);
-  return posts.map((post, index) => ({
+  const sortedPosts = posts.sort(
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+  );
+  return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
     props: {
       post,
       prevPost: index > 0 ? posts[index - 1] : null,
       nextPost: index < posts.length - 1 ? posts[index + 1] : null,
+      index,
     },
   }));
 }
 
-const { post, prevPost, nextPost } = Astro.props;
-console.log(post);
+const { post, prevPost, nextPost, index } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Post {...post.data} prevPost={prevPost} nextPost={nextPost}>
+<Post {...post.data} prevPost={prevPost} nextPost={nextPost} index={index}>
   <Content />
 </Post>

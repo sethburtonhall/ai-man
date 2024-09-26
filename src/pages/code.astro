@@ -26,56 +26,64 @@ const posts = (await getCollection("code")).sort(
           class="m-0 grid list-none grid-cols-1 gap-2 p-0 md:grid-cols-2 md:gap-8"
         >
           {
-            posts.map((post) => (
-              <li
-                class:list={[
-                  "decoration-none group col-span-1 mb-12 transition-all duration-200",
-                  {
-                    "first:col-span-1 first:text-center md:first:col-span-2 md:first:mb-16":
-                      post === posts[0],
-                  },
-                ]}
-              >
-                <a href={`/code/${post.slug}/`} class="w-min">
-                  <div class="w-full">
-                    <Picture
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage as string}
-                      alt=""
+            posts.map((post, index) => {
+              const reversedIndex = posts.length - 1 - index;
+              return (
+                <li
+                  class:list={[
+                    "decoration-none group col-span-1 mb-12 transition-all duration-200",
+                    {
+                      "first:col-span-1 first:text-center md:first:col-span-2 md:first:mb-16":
+                        post === posts[0],
+                    },
+                  ]}
+                >
+                  <a href={`/code/${post.slug}/`} class="w-min">
+                    <div class="w-full">
+                      <Picture
+                        width={720}
+                        height={360}
+                        src={post.data.heroImage as string}
+                        alt=""
+                        class:list={[
+                          "mb-2 rounded-xl group-hover:shadow-lg",
+                          { "w-full": post === posts[0] },
+                        ]}
+                      />
+                    </div>
+                    <div
                       class:list={[
-                        "mb-2 rounded-xl group-hover:shadow-lg",
-                        { "w-full": post === posts[0] },
-                      ]}
-                    />
-                  </div>
-                  <div
-                    class:list={[
-                      "stack gap-2",
-                      {
-                        "items-center": post === posts[0],
-                        "items-start": post !== posts[0],
-                      },
-                    ]}
-                  >
-                    <h4
-                      class:list={[
-                        "gradient-text w-max group-hover:text-brand",
+                        "stack gap-2",
                         {
-                          "text-2xl md:text-4xl": post === posts[0],
+                          "items-center": post === posts[0],
+                          "items-start": post !== posts[0],
                         },
                       ]}
                     >
-                      {post.data.title}
-                    </h4>
-                    <div class="text-base font-normal text-zinc-400">
-                      <FormattedDate date={post.data.pubDate} />
-                      <CursorPulse />
+                      <h4
+                        class:list={[
+                          "gradient-text w-max group-hover:text-brand",
+                          {
+                            "text-2xl md:text-4xl": post === posts[0],
+                          },
+                        ]}
+                      >
+                        {post.data.title}
+                      </h4>
+                      <div class="text-base font-normal text-zinc-200">
+                        <div class="flex items-end gap-2">
+                          <FormattedDate
+                            date={post.data.pubDate}
+                            index={reversedIndex}
+                          />
+                          <CursorPulse />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-            ))
+                  </a>
+                </li>
+              );
+            })
           }
         </ul>
       </section>
