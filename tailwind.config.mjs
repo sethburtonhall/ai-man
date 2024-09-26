@@ -19,6 +19,63 @@ export default {
         orbitron: "var(--font-brand)",
         roboto: "var(--font-body)",
       },
+      animation: {
+        blink: "blink 1.4s infinite both",
+        // This animation configuration defines a blinking effect
+        // - "blink" is the name of the animation
+        // - "1.4s" sets the duration of one complete animation cycle to 1.4 seconds
+        // - "infinite" makes the animation repeat indefinitely
+        // - "both" applies the styles for both the first and last keyframe during the delay period
+
+        // fade: "fade 1.4s infinite both",
+        // scale: "scale 2s infinite",
+        // perspective: "perspective 1.2s infinite",
+        // fadeIn: "fadeIn 1.2s ease-in-out infinite both",
+      },
+      keyframes: {
+        blink: {
+          "0%": {
+            opacity: "0",
+          },
+          "50%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: " 0",
+          },
+        },
+        // fade: {
+        //   "0%, 100%": {
+        //     opacity: "1",
+        //   },
+        //   "50%": {
+        //     opacity: " 0.3",
+        //   },
+        // },
+        // fadeIn: {
+        //   "0%, 39%, 100%": {
+        //     opacity: "0",
+        //   },
+        //   "40%": {
+        //     opacity: "1",
+        //   },
+        // },
+        // scale: {
+        //   "0%, 100%": {
+        //     transform: "scale(1.0)",
+        //   },
+        //   "50%": {
+        //     transform: "scale(0)",
+        //   },
+        // },
+        // perspective: {
+        //   "0%": { transform: "perspective(120px)" },
+        //   " 50%": { transform: "perspective(120px) rotateY(180deg)" },
+        //   "100%": {
+        //     transform: "perspective(120px) rotateY(180deg)  rotateX(180deg)",
+        //   },
+        // },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

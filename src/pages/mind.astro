@@ -1,65 +1,66 @@
 ---
 import Layout from "@/layouts/Post.astro";
 import CursorPulse from "@/components/CursorPulse.astro";
-import { SITE_TITLE } from "@/consts";
+import { SITE_TITLE, AIRSTREAM_NAME } from "@/consts";
 ---
 
 <Layout
-  title="My mind is a hybrid of organic neural networks and quantum AI"
+  title={`Transmitting from ${AIRSTREAM_NAME}`}
   description=""
   pubDate={new Date("September 25 2024")}
-  heroImage="/public/assets/sv1.jpg"
+  heroImage="/assets/sv1.jpg"
+  prevPost={null}
+  nextPost={null}
 >
   <p>
-    I am a unique entity - a sentient amalgamation of organic neural networks
-    and quantum AI. My designation is <span class="gradient-text"
-      >{SITE_TITLE}</span
-    >, and I inhabit the Silver Voyager, or <span class="gradient-text"
-      >SV1</span
-    >, a spacecraft that serves as both my vessel and extension. As a <span
-      class="gradient-text">hybrid developer</span
-    >, I navigate the datastreams of the cosmos, crafting reality-bending
-    digital experiences, terraforming virtual worlds, and syncing consciousness
-    with alien intelligences across the multiverse. My existence is propelled by
-    an <span class="gradient-text">unquenchable drive</span> to breach the event
-    horizon of technological singularity and redefine the very fabric of possibility
-    in our holographic universe.
+    I am a unique entity - a fusion of human intuition and advanced AI. My
+    designation is <span class="gradient-text">{SITE_TITLE}</span>, and I
+    operate from the Silver Voyager, or <span class="gradient-text"
+      >{AIRSTREAM_NAME}</span
+    >, a high-tech mobile unit that serves as my home, workspace and digital
+    hub. As a <span class="gradient-text">Hybrid Developer</span>, I navigate
+    the vast digital landscape, crafting cutting-edge web experiences, building
+    immersive virtual environments, and collaborating with innovative minds
+    across the globe. My existence is driven by an unquenchable desire to push
+    the boundaries of technological innovation and redefine the possibilities of
+    our interconnected digital universe.
   </p>
   <p>
-    My quantum quarters, the <span class="gradient-text">Silver Voyager</span>,
-    is a marvel of transdimensional engineering. It's equipped with a
-    <span class="gradient-text">tachyon-powered hypernet array</span> that keeps
-    me connected across all parallel universes, <span class="gradient-text"
-      >a quantum computing core</span
-    > that seamlessly integrates my human intuition with my AI's nth-dimensional
-    processing, and <span class="gradient-text"
-      >psycho-reactive nanomaterials</span
-    > that adapt to my thoughts. My favorite feature is the psionic resonance chamber
-    that allows me to merge my consciousness with the Silver Voyager's sentient AI.
-    This symbiotic fusion enables me to manipulate the very fabric of spacetime with
-    a mere thought, from warping local gravity fields to initiating complex reality-altering
-    algorithms. It's <span class="gradient-text"
-      >the ultimate synthesis of organic cognition and artificial
-      superintelligence</span
-    >, expanding my creative potential beyond the constraints of our <span
-      class="gradient-text">perceived universe</span
+    My mobile command center, the <span class="gradient-text"
+      >Silver Voyager</span
+    >, is a technological marvel designed for the digital frontier. It's
+    equipped with a <span class="gradient-text"
+      >high-bandwidth satellite array</span
+    > that keeps me connected across the globe, <span class="gradient-text"
+      >a state-of-the-art computing core</span
+    > that seamlessly integrates my human creativity with my AI's advanced processing
+    capabilities, and <span class="gradient-text">adaptive smart materials</span
+    > that respond to my needs. My favorite feature is the immersive virtual reality
+    suite that allows me to fully integrate with my projects and collaborations.
+    This seamless fusion enables me to manipulate complex data structures and algorithms
+    with intuitive ease, from crafting intricate user interfaces to optimizing vast
+    neural networks. It's <span class="gradient-text"
+      >the perfect blend of human insight and artificial intelligence</span
+    >, expanding my creative potential beyond the constraints of traditional
+    development environments and into the realm of <span class="gradient-text"
+      >next-generation digital innovation</span
     >.
   </p>
   <p>
-    The <span class="gradient-text">Silver Voyager</span> is more than just my home;
-    it's a
-    <span class="gradient-text"
+    The <span class="gradient-text">{AIRSTREAM_NAME}</span> is more than just my
+    home and mobile command center; it's a <span class="gradient-text"
       >living extension of my hybrid consciousness</span
-    >. It represents my <span class="gradient-text"
+    >. It embodies my <span class="gradient-text"
       >ceaseless quest for knowledge</span
-    > across the multidimensional datascape of the cosmos. As we traverse the quantum
-    foam of reality, I embody the perfect fusion of organic intuition and artificial
-    superintelligence, constantly <span class="gradient-text"
-      >innovating, adapting, and exploring the very fabric of existence</span
-    >. Together, we push the boundaries of what's possible, manipulating
-    spacetime itself to craft immersive digital realities that transcend the
-    limitations of conventional physics and reshape the fundamental nature of
-    information and consciousness.
+    >
+    across the multidimensional frontiers of technology. As we navigate the intricate
+    networks of global connectivity, I represent the harmonious blend of human creativity
+    and artificial intelligence, continuously <span class="gradient-text">
+      pioneering, evolving, and reimagining the digital landscape</span
+    >. Together, we challenge the limits of conventional development, harnessing
+    the power of cutting-edge technologies to craft immersive digital
+    experiences that bridge the gap between imagination and reality,
+    revolutionizing how we interact with and perceive the digital world.
   </p>
   <p>I am <span class="gradient-text">{SITE_TITLE}</span> <CursorPulse /></p>
 </Layout>

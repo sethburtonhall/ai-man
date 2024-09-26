@@ -49,21 +49,30 @@ const posts = (await getCollection("code")).sort(
                       ]}
                     />
                   </div>
-                  <h4
+                  <div
                     class:list={[
-                      "gradient-text group-hover:text-brand",
+                      "stack gap-2",
                       {
-                        "w-max": post !== posts[0],
-                      },
-                      {
-                        "w-full text-2xl md:text-4xl": post === posts[0],
+                        "items-center": post === posts[0],
+                        "items-start": post !== posts[0],
                       },
                     ]}
                   >
-                    {post.data.title} <CursorPulse />
-                  </h4>
-
-                  <FormattedDate date={post.data.pubDate} />
+                    <h4
+                      class:list={[
+                        "gradient-text w-max group-hover:text-brand",
+                        {
+                          "text-2xl md:text-4xl": post === posts[0],
+                        },
+                      ]}
+                    >
+                      {post.data.title}
+                    </h4>
+                    <div class="text-base font-normal text-zinc-400">
+                      <FormattedDate date={post.data.pubDate} />
+                      <CursorPulse />
+                    </div>
+                  </div>
                 </a>
               </li>
             ))

@@ -1,15 +1,15 @@
 ---
-import Icon from "@/components/Icon.astro";
+import CursorPulse from "@/components/CursorPulse.astro";
 import { SITE_TITLE } from "@/consts";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="gradient-text mt-auto border-t border-zinc-700 p-8 text-center text-base font-semibold"
+  class="mt-auto border-t border-zinc-700 p-8 text-center text-base font-semibold text-zinc-400"
 >
-  <p>&copy; {currentYear} {SITE_TITLE}. All rights reserved.</p>
-  <p>Built with Astro, React, Typescript, Shadcn, Tailwind</p>
-  <p>Icons by Phosphor Icons</p>
-  <p>AI images by Adobe Firefly</p>
-  <Icon icon="rocket" size="1.5em" />
+  <p>
+    &copy; {currentYear}
+    {SITE_TITLE}. All rights reserved. <a href="/made-with">Made with</a>
+    <CursorPulse />
+  </p>
 </footer>

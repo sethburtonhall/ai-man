@@ -2,19 +2,30 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Post from "@/layouts/Post.astro";
 
+interface Props {
+  post: CollectionEntry<"code">;
+  prevPost: CollectionEntry<"code"> | null;
+  nextPost: CollectionEntry<"code"> | null;
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection("code");
-  return posts.map((post) => ({
+  console.log("Posts:", posts);
+  return posts.map((post, index) => ({
     params: { slug: post.slug },
-    props: post,
+    props: {
+      post,
+      prevPost: index > 0 ? posts[index - 1] : null,
+      nextPost: index < posts.length - 1 ? posts[index + 1] : null,
+    },
   }));
 }
-type Props = CollectionEntry<"code">;
 
-const post = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
+console.log(post);
 const { Content } = await post.render();
 ---
 
-<Post {...post.data}>
+<Post {...post.data} prevPost={prevPost} nextPost={nextPost}>
   <Content />
 </Post>
