@@ -1,0 +1,57 @@
+---
+title: "Launch Pad"
+description: "5-4-3-2-1"
+pubDate: "September 29 2024"
+heroImage: "/assets/code/launch-pad.jpg"
+promptImage: "/assets/code/launch-pad-prompt.jpg"
+url: "https://launch-pad-app.netlify.app/"
+github: "https://github.com/sethburtonhall/launch-pad"
+status: "draft"
+---
+
+import { Picture } from "astro:assets";
+
+#### Links
+
+- <a href={frontmatter.url}>App</a>{" "}
+- <a href={frontmatter.github}>Code</a>
+
+#### AI Tools
+
+- [V0 by Vercel](https://v0.dev/)
+- [Cursor](https://cursor.com/)
+
+#### Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind
+- shadcn/ui
+
+#### Prompts
+
+> Please build a countdown timer like the one in the attached screenshot. Users should see a live countdown timer cards that flip down from the middle when the numbers change. This should be a NextJS project.
+
+<div class="stack items-end gap-0">
+  <Picture
+    width={768}
+    height={360}
+    src={frontmatter.promptImage}
+    alt="TipTop Prompt"
+    class="bg-red-400"
+  />
+
+{<a href="https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
+class="text-base">\*Design by Frontend Mentor</a>}
+
+</div>
+
+#### Human Contributions
+
+- I manually installed all necessary files and components using the shadcn CLI via V0.
+- I manually added the V0 generated css
+- I tried to prompt the flip animation but ended up implemented manually.
+
+#### Future Features
+
+-

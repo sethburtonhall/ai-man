@@ -17,7 +17,7 @@ const { prevPost, nextPost } = Astro.props;
         prevPost && (
           <a href={`/code/${prevPost.slug}/`} class="flex items-center gap-2">
             <Icon icon="arrowLeft" size="1.5em" gradient />
-            <span>Prev</span>
+            <span class="gradient-text-reverse">Prev</span>
           </a>
         )
       }

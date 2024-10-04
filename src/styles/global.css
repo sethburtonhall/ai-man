@@ -130,6 +130,9 @@
   .gradient-text {
     @apply bg-gradient-to-r from-blue-500 via-purple-500 to-fuchsia-500 bg-clip-text font-semibold text-transparent;
   }
+  .gradient-text-reverse {
+    @apply bg-gradient-to-l from-blue-500 via-purple-500 to-fuchsia-500 bg-clip-text font-semibold text-transparent;
+  }
 
   .active:not(.site-title) {
     @apply text-fuchsia-500 underline underline-offset-4;
