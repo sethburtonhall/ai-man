@@ -1,23 +1,27 @@
 ---
-interface Props {
-  date: Date;
-  index?: number;
-}
+import CursorPulse from "@/components/CursorPulse.astro";
 
-const { date, index } = Astro.props;
+const { date, index, class: className } = Astro.props;
 ---
 
-ChronoLog: Entry #{index !== undefined ? index + 1 : ""}
-<time datetime={date?.toISOString()}>
-  {
-    date
-      .toLocaleDateString("en-us", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      })
-      .split("/")
-      .reverse()
-      .join("-")
-  }
-</time>
+<div class="stack gap-0">
+  <span>ChronoLog: Entry #{index !== undefined ? index + 1 : ""}</span>
+
+  <time
+    datetime={date?.toISOString()}
+    class:list={["flex items-end gap-1", className]}
+  >
+    {
+      date
+        .toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        })
+        .split("/")
+        .reverse()
+        .join("-")
+    }
+    <CursorPulse />
+  </time>
+</div>

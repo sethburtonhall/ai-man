@@ -17,7 +17,7 @@ export default function MobileMenu(props: MobileMenuProps) {
     <Sheet>
       <SheetTrigger>{props.icon}</SheetTrigger>
 
-      <SheetContent className="bg-zinc-950 pt-4">
+      <SheetContent className="bg-zinc-950">
         <SheetHeader>
           <SheetTitle>{props.title}</SheetTitle>
         </SheetHeader>

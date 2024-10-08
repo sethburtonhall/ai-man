@@ -68,12 +68,12 @@ const tools: {
 
 <Layout>
   <main
-    class="stack container mx-auto my-12 h-min max-w-4xl items-center gap-12 px-4 lg:my-20"
+    class="stack container mx-auto my-12 h-min max-w-4xl gap-12 px-4 md:items-center lg:my-20"
   >
     <section>
-      <div class="stack items-center gap-2">
+      <div class="stack gap-2 md:items-center">
         <div class="flex items-end gap-2">
-          <h1 class="gradient-text text-3xl tracking-tighter lg:text-5xl">
+          <h1 class="gradient-text text-3xl tracking-tighter md:text-4xl">
             Made With
           </h1>
           <CursorPulse class="text-5xl" />
@@ -85,7 +85,7 @@ const tools: {
     </section>
 
     <section>
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-3">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-3">
         {
           tools.map((tool) => (
             <div class="stack gap-2">

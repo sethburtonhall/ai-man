@@ -2,7 +2,6 @@
 import BaseHead from "@/components/BaseHead.astro";
 import { Picture } from "astro:assets";
 import Header from "@/components/Header.astro";
-import CursorPulse from "@/components/CursorPulse.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { getCollection } from "astro:content";
@@ -73,13 +72,11 @@ console.log(posts);
                         {post.data.title}
                       </h4>
                       <div class="text-base font-normal text-zinc-200">
-                        <div class="flex items-end gap-2">
-                          <FormattedDate
-                            date={post.data.pubDate}
-                            index={reversedIndex}
-                          />
-                          <CursorPulse />
-                        </div>
+                        <FormattedDate
+                          date={post.data.pubDate}
+                          index={reversedIndex}
+                          class:list={[post === posts[0] && "justify-center"]}
+                        />
                       </div>
                     </div>
                   </a>
