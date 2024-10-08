@@ -4,8 +4,8 @@ import CursorPulse from "@/components/CursorPulse.astro";
 const { date, index, class: className } = Astro.props;
 ---
 
-<div class="stack gap-0">
-  <span>ChronoLog: Entry #{index !== undefined ? index + 1 : ""}</span>
+<div class="stack gap-0 md:flex-row md:items-end md:gap-2">
+  <span>ChronoLog: Entry #{index !== undefined ? index + 1 : "0"}</span>
 
   <time
     datetime={date?.toISOString()}
@@ -22,6 +22,6 @@ const { date, index, class: className } = Astro.props;
         .reverse()
         .join("-")
     }
-    <CursorPulse />
+    <CursorPulse class="text-xl" />
   </time>
 </div>

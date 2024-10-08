@@ -50,26 +50,38 @@ const {
         <div
           class="prose-a:gradient-text prose mx-auto p-2 text-xl prose-headings:text-zinc-100 prose-p:text-zinc-100 prose-blockquote:border-l-4 prose-blockquote:bg-fuchsia-500 prose-blockquote:bg-opacity-50 prose-blockquote:px-6 prose-blockquote:py-2 prose-ul:text-zinc-100 prose-img:border-4 prose-img:border-fuchsia-500"
         >
-          <div class="mb-4 flex flex-col items-center text-center">
+          <div class="stack mb-4 items-center gap-0 text-center">
             {
               title && (
-                <h1 class="gradient-text mb-3 w-max text-2xl !text-transparent lg:text-4xl">
+                <h1 class="gradient-text !mb-2 w-max text-2xl !text-transparent md:text-4xl">
                   {title}
                 </h1>
               )
             }
-            <div class="mb-2 text-sm text-zinc-200">
-              {!updatedDate && <FormattedDate date={pubDate} index={index} />}
+            <div class="mb-2 text-base text-zinc-200">
+              {
+                !updatedDate && (
+                  <FormattedDate
+                    date={pubDate}
+                    index={index}
+                    class="justify-center"
+                  />
+                )
+              }
               {
                 updatedDate && (
                   <div>
                     Last updated on{" "}
-                    <FormattedDate date={updatedDate} index={index} />
+                    <FormattedDate
+                      date={updatedDate}
+                      index={index}
+                      class="justify-center"
+                    />
                   </div>
                 )
               }
             </div>
-            {description && <p class="mt-0">{description}</p>}
+            {description && <p class="mt-2">{description}</p>}
             <hr class="my-2 w-full border-zinc-700" />
           </div>
           <slot />
